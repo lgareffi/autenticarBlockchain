@@ -1,16 +1,14 @@
-# --- Node ---
+
 node_modules/
 npm-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# --- Env & secrets ---
 .env
 .env.*
 !.env.example
 connection-org1.json
 
-# --- Hyperledger Fabric / credenciales ---
 crypto/
 wallet/
 *.pem
@@ -22,11 +20,9 @@ wallet/
 *.id
 *.keystore
 
-# --- Logs ---
 logs/
 *.log
 
-# --- OS / editores ---
 .DS_Store
 Thumbs.db
 .vscode/

@@ -1,4 +1,4 @@
-// src/server.js
+
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', (_req, res) => {
-  res.send('AutentiCar backend ✅');
+  res.send('AutentiCar backend');
 });
 
 app.post('/record', async (req, res) => {
@@ -21,9 +21,9 @@ app.post('/record', async (req, res) => {
     const { contract } = await initFabric();
 
     const tx = contract.createTransaction('recordEvent')
-      .setEndorsingOrganizations('Org1MSP', 'Org2MSP'); // <- pedir ambas
+      .setEndorsingOrganizations('Org1MSP', 'Org2MSP'); 
 
-    const result = await tx.submit(vehicleId, eventHash); // la función acepta 2 args
+    const result = await tx.submit(vehicleId, eventHash); 
     return res.json({ ok: true, payload: JSON.parse(result.toString()) });
   } catch (err) {
     console.error(err);
